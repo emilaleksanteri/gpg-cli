@@ -18,6 +18,27 @@ var rootCmd = &cobra.Command{
 
 	Before you start, to generate a GPG key with gpg command line run:
 	$ gpg --full-generate-key
+	
+	Then you can run:
+	$ gpg-gen keys
+
+	To pick key id and email from the key list
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	sec   4096R/3AA5C34371567BD2 2016-03-10 [expires: 2017-03-10]
+	uid                          Hubot <hubot@example.com>       
+	ssb   4096R/4BB6D45482678BE3 2016-03-10		             
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	Key id would be: 3AA5C34371567BD2
+	Email would be: hubot@example.com
+
+	Then you can run:
+	$ gpg-gen add --key <key-id> --email <email>
+
+	To add the key to your git config and github account:
+	$ gpg-gen github --key <key-id>
+
 	`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:

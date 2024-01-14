@@ -17,7 +17,7 @@ Email would be: ```hubot@example.com```
 
 Run ```gpg-gen add --key <key-id> --email <email>```
 
-4. Run ```gpg-gen github``` add the generated token to your github profile GPG Keys, make sure the same email address used with the key is also linked to your github account
+4. Run ```gpg-gen github --key <key-id>``` add the generated token to your github profile GPG Keys, make sure the same email address used with the key is also linked to your github account
 
 # Install
 1. Copy repo to local
