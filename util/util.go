@@ -20,6 +20,13 @@ func ExecuteCmdWithPrint(name string, args []string, dir string) error {
 	return nil
 }
 
+func CheckGitExistsOnDir(dir string) bool {
+	if _, err := os.Stat(fmt.Sprintf("%s/.git", dir)); os.IsNotExist(err) {
+		return false
+	}
+	return true
+}
+
 func ExecuteCmd(name string, args []string, dir string) error {
 	command := exec.Command(name, args...)
 	command.Dir = dir

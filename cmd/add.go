@@ -42,6 +42,11 @@ var addCmd = &cobra.Command{
 			return
 		}
 
+		if !util.CheckGitExistsOnDir(currDir) {
+			fmt.Printf("Git repo not found on dir, run: git init\n")
+			return
+		}
+
 		err = util.ExecuteCmd(
 			"git",
 			[]string{"config", "--unset", "gpg.format"},
