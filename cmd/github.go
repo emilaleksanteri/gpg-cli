@@ -10,12 +10,6 @@ import (
 	"gpg-gen/util"
 )
 
-func init() {
-	var key string
-
-	githubCmd.Flags().StringVar(&key, "key", "", "key id for a GPG key, required")
-}
-
 // githubCmd represents the github command
 var githubCmd = &cobra.Command{
 	Use:   "github",
@@ -52,13 +46,7 @@ var githubCmd = &cobra.Command{
 func init() {
 	rootCmd.AddCommand(githubCmd)
 
-	// Here you will define your flags and configuration settings.
+	var key string
 
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// githubCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// githubCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	githubCmd.Flags().StringVar(&key, "key", "", "key id for a GPG key, required")
 }
